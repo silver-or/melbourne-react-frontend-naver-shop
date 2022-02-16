@@ -1,20 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
-//import Hello from './hello/Hello';
-import Login from './hello/Login';
-import Bmi from './hello/Bmi';
-import Calc from './hello/Calc';
-import Grade from './hello/Grade';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
-    <Bmi />
-    <Calc />
-    <Grade />
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
