@@ -1,17 +1,17 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; // 라우팅
-import Home from "./hello/Home";
-import Bmi from "./hello/Bmi";
-import Calc from "./hello/Calc";
-import Grade from "./hello/Grade";
-import Login from "./hello/Login";
+import Home from "./pages/Home";
+import Bmi from "./components/Bmi";
+import Calc from "./components/Calc";
+import Grade from "./components/Grade";
+import Login from "./components/Login";
 const App = () => {
   return (
     <div>
       <Router>
           <Routes>
-            <Route expected path="/" element={<Home/>}/>
-            <Route path="/bmi" element={<Bmi/>}/>
+            <Route expected path={"/"} element={<Home/>}/>
+            <Route path={"/bmi"} element={<Bmi/>}/>
             <Route path="/calc" element={<Calc/>}/>
             <Route path="/grade" element={<Grade/>}/>
             <Route path="/login" element={<Login/>}/>

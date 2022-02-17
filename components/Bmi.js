@@ -2,6 +2,7 @@ import React from "react";
 const Bmi = () => {
     return <>
     <h1>Bmi</h1>
+    
     <form>
         <div>
             <label><b>이름</b></label> <br />
