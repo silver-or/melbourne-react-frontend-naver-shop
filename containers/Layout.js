@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Bmi from "../components/Bmi";
 import Footer from "./Footer";
 import Header from "./Header";
 export default function Layout ({children}) { return (<div>
