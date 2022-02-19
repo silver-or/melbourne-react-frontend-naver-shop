@@ -13,9 +13,9 @@ export default function Bmi () {
         let weight = document.getElementById('weight').value
         console.log('weight : ' + weight)
         setUsername(username)
-        setHeight(Number(height))
-        setWeight(Number(weight))
-        setResult(username + "의 키 : " + height + ", 몸무게 : " + weight)
+        setHeight(height)
+        setWeight(weight)
+        setResult(username + "의 키 : " + Number(height) + ", 몸무게 : " + Number(weight))
     }
     return (<Layout>
     <h1>Bmi</h1>

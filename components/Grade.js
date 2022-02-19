@@ -18,7 +18,8 @@ export default function Grade () {
         setResult("이름 : " + name + ", " + 
             "국어 점수 : " + kor + ", " +
             "영어 점수 : " + eng + ", " +
-            "수학 점수 : " + math)
+            "수학 점수 : " + math + "," +
+            "총점 : " + (Number(kor) + Number(eng) + Number(math)))
     }
     return (<Layout>
         <h1> 성적표</h1>
