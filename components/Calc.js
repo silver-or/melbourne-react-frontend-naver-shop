@@ -1,11 +1,17 @@
 import React, {useState} from "react";
 import Layout from "../containers/Layout";
 export default function Calc () {
-    const [num1, setNum1] = useState(0)
-    const [opcode, setOpcode] = useState("")
-    const [num2, setNum2] = useState(0)
-    const [result, setResult] = useState("")
-    const calculate = () => {
+    const [inputs, setInputs] = useState({})
+    const {num1, opcode, num2} = inputs;
+
+    const handleChange = (e) => {
+        e.preventDefault()
+        const {value, name} = e.target; // name : 키 값
+        setInputs({ ...inputs, [name] : value})
+    }
+
+    const handleClick = (e) => {
+        /*
         let num1 = document.getElementById('num1').value // num1의 상태값 가져오기
         let opcode = document.getElementById('opcode').value
         let num2 = document.getElementById('num2').value
@@ -20,14 +26,19 @@ export default function Calc () {
             case '%' : setResult(num1 + opcode + num2 + " = " + (Number(num1) % Number(num2))); break;
             default : setResult("올바른 연산자가 아닙니다."); break;
         }
+        */
+       e.preventDefault()
+       const calcRequest = {num1, opcode, num2}
+       alert(`${JSON.stringify(calcRequest)}`)
     }
+    
     return (<Layout>
     <h1>계산기</h1>
     <form>
         <label><b>num1</b></label> <br/>
-        <input id="num1"/> <br />
+        <input name="num1" onChange={handleChange}/> <br />
         <label><b>연산자</b></label> <br/>
-        <select name="" id="opcode">
+        <select name="opcode" onChange={handleChange}>
             <option value="+">+</option>
             <option value="-">-</option>
             <option value="*">*</option>
@@ -35,9 +46,8 @@ export default function Calc () {
             <option value="%">%</option>
         </select> <br />
         <label><b>num2</b></label> <br/>
-        <input id="num2"/> <br/>
-        <button onClick={() => {calculate()}}>계산하기</button>
+        <input name="num2" onChange={handleChange}/> <br/>
+        <button onClick={handleClick}>계산하기</button>
     </form>
-    <div>결과 : {result} </div>
     </Layout>)
 }
