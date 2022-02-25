@@ -27,9 +27,9 @@ export default function Login () {
         <h1>로그인 폼</h1>
         <div>
             <label><b>Username</b></label> <br/>
-            <input name="username" onChange={handleChange}/> <br />
+            <input type="text" name="username" onChange={handleChange}/> <br />
             <label><b>Password</b></label> <br/>
-            <input name="pw" onChange={handleChange}/> <br/>
+            <input type="password" name="pw" onChange={handleChange}/> <br/>
             <button onClick={handleClick}>Login</button> <br/>
             <label>
                 <input /> Remember me

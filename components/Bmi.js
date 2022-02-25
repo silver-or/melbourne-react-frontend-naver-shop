@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Layout from "../containers/Layout";
+import {memberBmi} from '../api/index'
 export default function Bmi () {
     const [inputs, setInputs] = useState({}) // 세 개로 나뉜 것을 JSON({})으로 합침
     const {name, height, weight} = inputs; // Object Destructuring (구조 분해 할당) // 꺼내면서 객체에 이름 부여
@@ -21,13 +22,12 @@ export default function Bmi () {
         */
         e.preventDefault() // HTML이 default
         const bmiRequest = {name, height, weight}
-        alert(`사용자 이름 : ${JSON.stringify(bmiRequest)}`)
-        /*
-        axios.get(`http://localhost:8080/member/bmi/홍길동/180.5/80.5`)
-        .then((res) => {
-            alert(`답장이 도착했습니다. [내용] ${JSON.stringify(res.data)}`)
-        }) 
-        */
+        console.log(`사용자 이름 : ${JSON.stringify(bmiRequest)}`)
+        memberBmi(bmiRequest)
+        .then(res => {
+            alert(res.data)
+        })
+        .catch(err => console.log(`에러 발생 : ${err}`))
     }
     
     return (<Layout>
