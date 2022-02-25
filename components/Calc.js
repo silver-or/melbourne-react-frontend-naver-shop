@@ -1,7 +1,9 @@
 import React, {useState} from "react";
+import { memberCalc } from "../api";
 import Layout from "../containers/Layout";
 export default function Calc () {
     const [inputs, setInputs] = useState({})
+    const [result, setResult] = useState('')
     const {num1, opcode, num2} = inputs;
 
     const handleChange = (e) => {
@@ -11,25 +13,8 @@ export default function Calc () {
     }
 
     const handleClick = (e) => {
-        /*
-        let num1 = document.getElementById('num1').value // num1의 상태값 가져오기
-        let opcode = document.getElementById('opcode').value
-        let num2 = document.getElementById('num2').value
-        setNum1(num1)
-        setOpcode(opcode)
-        setNum2(num2) 
-        switch (opcode) {
-            case '+' : setResult(num1 + opcode + num2 + " = " + (Number(num1) + Number(num2))); break;
-            case '-' : setResult(num1 + opcode + num2 + " = " + (Number(num1) - Number(num2))); break;
-            case '*' : setResult(num1 + opcode + num2 + " = " + (Number(num1) * Number(num2))); break;
-            case '/' : setResult(num1 + opcode + num2 + " = " + (Number(num1) / Number(num2))); break;
-            case '%' : setResult(num1 + opcode + num2 + " = " + (Number(num1) % Number(num2))); break;
-            default : setResult("올바른 연산자가 아닙니다."); break;
-        }
-        */
        e.preventDefault()
-       const calcRequest = {num1, opcode, num2}
-       alert(`${JSON.stringify(calcRequest)}`)
+       memberCalc({num1, opcode, num2}).then(res => setResult(res.data)).catch(err => console.log(`에러 발생 : ${err}`))
     }
     
     return (<Layout>
@@ -49,5 +34,6 @@ export default function Calc () {
         <input name="num2" onChange={handleChange}/> <br/>
         <button onClick={handleClick}>계산하기</button>
     </form>
+    <div>{result}</div>
     </Layout>)
 }
