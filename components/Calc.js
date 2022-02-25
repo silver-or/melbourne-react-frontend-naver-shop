@@ -18,22 +18,25 @@ export default function Calc () {
     }
     
     return (<Layout>
-    <h1>계산기</h1>
-    <form>
-        <label><b>num1</b></label> <br/>
-        <input name="num1" onChange={handleChange}/> <br />
-        <label><b>연산자</b></label> <br/>
-        <select name="opcode" onChange={handleChange}>
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-            <option value="%">%</option>
-        </select> <br />
-        <label><b>num2</b></label> <br/>
-        <input name="num2" onChange={handleChange}/> <br/>
-        <button onClick={handleClick}>계산하기</button>
-    </form>
-    <div>{result}</div>
+        <h1>계산기</h1>
+        <form>
+            <label><b>num1</b></label> <br/>
+            <input name="num1" onChange={handleChange}/> <br />
+            <label><b>연산자</b></label> <br/>
+            <select name="opcode" onChange={handleChange}>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select> <br />
+            <label><b>num2</b></label> <br/>
+            <input name="num2" onChange={handleChange}/> <br/>
+            <div>
+                <button onClick={handleClick}>계산하기</button> &nbsp;
+                <button>취소</button>
+            </div>
+        </form>
+        <div>{result}</div>
     </Layout>)
 }

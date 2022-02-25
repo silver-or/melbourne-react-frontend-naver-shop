@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import { memberLogin } from '../api';
 import Layout from '../containers/Layout';
 export default function Login () {
     const [inputs, setInputs] = useState({})
-    const {username, pw} = inputs;
+    const {userId, pw} = inputs;
+    const [result, setResult] = useState('')
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -11,33 +13,26 @@ export default function Login () {
     }
 
     const handleClick = (e) => {
-        /*
-        let username = document.getElementById('username').value
-        let pw = document.getElementById('pw').value
-        setUsername(username)
-        setPw(pw)
-        setResult("username : " + username + ", " + "pw : " + pw)
-        */
        e.preventDefault()
-       const loginRequest = {username, pw}
-       alert(`${JSON.stringify(loginRequest)}`)
+       memberLogin({userId, pw}).then(res => setResult(res.data)).catch(err => console.log(`에러 발생 : ${err}`))
     }
     
     return (<Layout>
         <h1>로그인 폼</h1>
         <div>
-            <label><b>Username</b></label> <br/>
-            <input type="text" name="username" onChange={handleChange}/> <br />
+            <label><b>UserId</b></label> <br/>
+            <input type="text" name="userId" onChange={handleChange}/> <br />
             <label><b>Password</b></label> <br/>
             <input type="password" name="pw" onChange={handleChange}/> <br/>
             <button onClick={handleClick}>Login</button> <br/>
             <label>
-                <input /> Remember me
+                <input type="checkbox"/> Remember me
             </label>
         </div>
         <div>
-            <button>Cancel</button>
+            <button>Cancel</button> &nbsp;
             <span>Forgot <a>password?</a></span>
         </div>
+        <div>{result}</div>
     </Layout>)
 }

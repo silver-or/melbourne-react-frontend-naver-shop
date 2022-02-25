@@ -31,7 +31,7 @@ export default function Grade () {
                 <input name="math" onChange={handleChange}/>
             </div>
             <div>
-                <button onClick={handleClick}>결과 확인하기</button>
+                <button onClick={handleClick}>결과 확인하기</button> &nbsp;
                 <button>취소</button>
             </div>
         </form>

@@ -35,4 +35,5 @@ const Th = styled.th`
 
 const Td = styled.td`
     border: 1px solid black;
+    white-space: pre-wrap;
 `
