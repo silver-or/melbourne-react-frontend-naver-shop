@@ -5,12 +5,12 @@ export default function Navbar () { return (<div>
     <Nav>
         <Ul>
             <Li><Link to={"/"}>Home</Link></Li>
-            <Li><Link to="/bmi">Bmi</Link></Li>
-            <Li><Link to="/calc">Calc</Link></Li>
-            <Li><Link to="/grade">Grade</Link></Li>
-            <Li><Link to="/login">Login</Link></Li>
-            <Li><Link to="/counter">Counter</Link></Li>
-            <Li><Link to="/lotto">Lotto</Link></Li>
+            <Li><Link to={"/bmi"}>Bmi</Link></Li>
+            <Li><Link to={"/calc"}>Calc</Link></Li>
+            <Li><Link to={"/grade"}>Grade</Link></Li>
+            <Li><Link to={"/login"}>Login</Link></Li>
+            <Li><Link to={"/counter"}>Counter</Link></Li>
+            <Li><Link to={"/lotto"}>Lotto</Link></Li>
         </Ul>
     </Nav>
 </div>) }

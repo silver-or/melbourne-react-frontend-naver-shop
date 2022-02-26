@@ -19,6 +19,7 @@ export default function Layout ({children}) { return (<div>
         </tbody>
     </Table>
 </div>) }
+
 const Table = styled.table`
     border: 1px solid black;
     width: 1000px;

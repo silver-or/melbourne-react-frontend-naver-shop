@@ -3,10 +3,10 @@ import { memberLotto } from "../api";
 import Layout from "../containers/Layout";
 export default function Lotto() {
     const [result, setResult] = useState('')
-    let duplicate = true;
-    let numbers = [];
+    let duplicate = true
+    let numbers = []
     const Random = () => {
-        return Math.floor((Math.random() * 45) + 1);
+        return Math.floor((Math.random() * 45) + 1)
     }
     const handleClick = (e) => {
         e.preventDefault()
