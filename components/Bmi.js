@@ -33,7 +33,7 @@ export default function Bmi () {
                 <input type="text" name="weight" onChange={handleChange}/>
             </div>
             <div>
-                <button onClick={handleClick}>BMI 지수 체크</button> &nbsp;
+                <button onClick={handleClick}>BMI 지수 체크하기</button> &nbsp;
                 <button>취소</button>
             </div>
         </form>

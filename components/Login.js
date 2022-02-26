@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { memberLogin } from '../api';
 import Layout from '../containers/Layout';
 export default function Login () {
@@ -21,7 +21,7 @@ export default function Login () {
         <h1>로그인 폼</h1>
         <div>
             <label><b>UserId</b></label> <br/>
-            <input type="text" name="userId" onChange={handleChange}/> <br />
+            <input type="text" name="userId" onChange={handleChange}/> <br/>
             <label><b>Password</b></label> <br/>
             <input type="password" name="pw" onChange={handleChange}/> <br/>
             <button onClick={handleClick}>Login</button> <br/>
@@ -31,7 +31,7 @@ export default function Login () {
         </div>
         <div>
             <button>Cancel</button> &nbsp;
-            <span>Forgot <a>password?</a></span>
+            <span>Forgot<a>password?</a></span>
         </div>
         <div>{result}</div>
     </Layout>)

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { memberLotto } from "../api";
 import Layout from "../containers/Layout";
-export default function Lotto() {
+export default function Sort() {
     let numbers = []
     let duplicate
     const [result, setResult] = useState('')
@@ -13,7 +12,7 @@ export default function Lotto() {
     const handleClick = (e) => {
         e.preventDefault()
         let num = 0
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 10; i++) {
             duplicate = true
             while (duplicate) {
                 num = Random()
@@ -25,13 +24,13 @@ export default function Lotto() {
                     }
                 }
             }
-            numbers[i] = num;
+            numbers[i] = num
         }
-        memberLotto({numbers}).then(res => setResult(res.data)).catch(err => console.log(`에러 발생 : ${err}`))
     }
+    
     return (<Layout>
-        <h1>로또 추첨</h1>
-        <div><button onClick={handleClick}>결과 확인하기</button></div> <br/>
+        <h1>정렬</h1>
+        <button onClick={handleClick}>정렬하기</button> <br/>
         <div>{result}</div>
     </Layout>)
 }

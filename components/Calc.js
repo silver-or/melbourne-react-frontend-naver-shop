@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { memberCalc } from "../api";
 import Layout from "../containers/Layout";
 export default function Calc () {
@@ -21,7 +21,7 @@ export default function Calc () {
         <h1>계산기</h1>
         <form>
             <label><b>num1</b></label> <br/>
-            <input name="num1" onChange={handleChange}/> <br />
+            <input name="num1" onChange={handleChange}/> <br/>
             <label><b>연산자</b></label> <br/>
             <select name="opcode" onChange={handleChange}>
                 <option value="+">+</option>
@@ -29,7 +29,7 @@ export default function Calc () {
                 <option value="*">*</option>
                 <option value="/">/</option>
                 <option value="%">%</option>
-            </select> <br />
+            </select> <br/>
             <label><b>num2</b></label> <br/>
             <input name="num2" onChange={handleChange}/> <br/>
             <div>

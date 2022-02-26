@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { memberGrade } from "../api";
 import Layout from "../containers/Layout";
 export default function Grade () {
@@ -18,15 +18,15 @@ export default function Grade () {
     }
     
     return (<Layout>
-        <h1> 성적표</h1>
+        <h1>성적표</h1>
         <form>
             <div>
                 <label><b>이름</b></label> <br/>
-                <input name="name" onChange={handleChange}/> <br />
+                <input name="name" onChange={handleChange}/> <br/>
                 <label><b>국어 성적</b></label> <br/>
-                <input name="kor" onChange={handleChange}/> <br />
+                <input name="kor" onChange={handleChange}/> <br/>
                 <label><b>영어 성적</b></label> <br/>
-                <input name="eng" onChange={handleChange}/> <br />
+                <input name="eng" onChange={handleChange}/> <br/>
                 <label><b>수학 성적</b></label> <br/>
                 <input name="math" onChange={handleChange}/>
             </div>
