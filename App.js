@@ -1,12 +1,7 @@
 import React from "react";
-import {useRoutes} from 'react-router-dom'; // 라우팅
+import { useRoutes } from 'react-router-dom'; // 라우팅
+import { Bmi, Calc, Grade, Login, Counter, Lotto } from './components/index'
 import Home from "./pages/Home";
-import Bmi from "./components/Bmi";
-import Calc from "./components/Calc";
-import Grade from "./components/Grade";
-import Login from "./components/Login";
-import Counter from "./components/Counter";
-import Lotto from "./components/Lotto";
 
 export default function App () {
   return useRoutes([

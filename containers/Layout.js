@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "./Footer";
-import Header from "./Header";
+import { Header, Footer } from "./index"; // 구조 분해 할당
+
 export default function Layout ({children}) { return (<div>
     <Table>
         <thead>
